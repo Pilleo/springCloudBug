@@ -1,8 +1,6 @@
 package com.example.springcloudbug;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.function.context.FunctionRegistration;
 import org.springframework.cloud.function.context.FunctionType;
 import org.springframework.cloud.function.context.FunctionalSpringApplication;
@@ -13,6 +11,7 @@ import java.util.function.Function;
 
 @SpringBootConfiguration
 public class SpringCloudBugApplication implements ApplicationContextInitializer<GenericApplicationContext> {
+    public static final String FUNCTION = "fucntion";
 
     public static void main(String[] args) {
         FunctionalSpringApplication.run(SpringCloudBugApplication.class, args);
@@ -20,12 +19,14 @@ public class SpringCloudBugApplication implements ApplicationContextInitializer<
 
     @Override
     public void initialize(GenericApplicationContext c) {
-        c.registerBean("bugFunction", FunctionRegistration.class, () -> function(c));
+        c.registerBean("bugFunctionRegistration", FunctionRegistration.class, () -> function(c));
+        Function<String, String> function = (str) -> str + str;
+
+        c.registerBean(FUNCTION,Function.class,()-> function);
     }
 
     private FunctionRegistration<Function<String, String>> function(GenericApplicationContext c) {
-        Function<String, String> function = (str) -> str + str;
-        return new FunctionRegistration<Function<String, String>>(function)
+        return new FunctionRegistration<Function<String, String>>(c.getBean(FUNCTION, Function.class))
                 .type(FunctionType.from(String.class).to(String.class).getType());
     }
 }
