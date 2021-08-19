@@ -1,0 +1,25 @@
+{
+  "Records":[
+    {
+      "messageId":"2227ad54-6ff4-44e1-b155-47add4fbd94d",
+      "receiptHandle":"AQEBERMKOR6vchtA8weJkvKYVGoSH3raZNvYsAwSjwZdO5eoVBbMS85xTeOd0YVYbMyIndsZhEEvPdKzKTVj5HZEPXIlnmjz4IsXfAYKnB+FISX32CnsCnJgRZ0PVbcWeuK8Wx83hjPkM+IN5WXHxZKfPt2JRVIDIrOgYloguw9nxR64ST6WSdRc5eTSNA/iUIQw9XH2JWhXxfsOmHuUkHIxDLXsmVPwYnRaJocFUukftq6CDzAjo4tAdw13oxc9rrLr/xpDgeISUJAF2n0CQJmBBf8jfZj/gokG4zYiyLgQhaq4YoBPko2E0BI1wkYzVUNBit6tJMM0Jnv1WQLAgMiyDboZc9oU2/KJ11j5q+/9yPY=",
+      "body":"test data",
+      "attributes":{
+        "ApproximateReceiveCount":"3",
+        "SentTimestamp":"1628523323853",
+        "SequenceNumber":"18863646044615919872",
+        "MessageGroupId":"MDEwLTM1NzkzNDEtMjAyMTA2LTAxMQ==",
+        "SenderId":"AROAQUWTFEDIHUUX5VRFN:test",
+        "MessageDeduplicationId":"4313e8adef62d094528f7496aa977f9595bc01f9b789d3d675528b3714b6f957",
+        "ApproximateFirstReceiveTimestamp":"1628551474540"
+      },
+      "messageAttributes":{
+
+      },
+      "md5OfBody":"24adb305301a49fb4951a19973b1bd3b",
+      "eventSource":"aws:sqs",
+      "eventSourceARN":"arn:aws:sqs:us-east-1:044466249936:test-queue.fifo",
+      "awsRegion":"us-east-1"
+    }
+  ]
+}
